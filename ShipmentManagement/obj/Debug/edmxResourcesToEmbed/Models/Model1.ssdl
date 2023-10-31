@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CourierModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ShipmentInfo">
+    <Key>
+      <PropertyRef Name="ConsignmentNo" />
+    </Key>
+    <Property Name="ConsignmentNo" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ShipperName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipperContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShipperAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecipientName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecipientContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RecipientAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProcessedBranch" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PickupBranch" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOPlacingOrder" Type="datetime" Nullable="false" />
+    <Property Name="ExpectedDeliveryDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="CourierModelStoreContainer">
+    <EntitySet Name="ShipmentInfo" EntityType="Self.ShipmentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

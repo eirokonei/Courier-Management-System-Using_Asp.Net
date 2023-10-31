@@ -1,0 +1,106 @@
+﻿@model ShipmentManagement.Models.ShipmentInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShipmentInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipperName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipperContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipperContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipperAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipperAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipientContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipientAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcessedBranch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcessedBranch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickupBranch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickupBranch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DOPlacingOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOPlacingOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedDeliveryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedDeliveryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ConsignmentNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

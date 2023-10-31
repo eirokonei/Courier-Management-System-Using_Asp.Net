@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ShipmentManagement.Models.ShipmentInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New Courier", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    <div class="heading_main text_align_center">
+        @Html.AntiForgeryToken()
+        @Html.TextBox("searching")
+        <input type="submit" value="Search" />
+    </div>
+}
+
+<div style="text-align:right">@Html.ActionLink("Print Report", "PrintReport")</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsignmentNo)
+        </th>
+        <th>
+            Shipper Name
+        </th>
+
+        <th>
+            Recipient Name
+        </th>
+
+
+        <th>
+            Processed Branch
+        </th>
+        <th>
+            Pickup Branch
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td>No Courier Found</td>
+        </tr>
+        <p>@ViewData["NotFoundMessage"]</p>
+    }
+
+    else
+    {
+
+
+
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ConsignmentNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipperName)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecipientName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProcessedBranch)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PickupBranch)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ConsignmentNo }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ConsignmentNo }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ConsignmentNo })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

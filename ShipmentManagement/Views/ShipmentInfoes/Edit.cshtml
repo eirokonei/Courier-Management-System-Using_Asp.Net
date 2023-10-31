@@ -1,0 +1,126 @@
+﻿@model ShipmentManagement.Models.ShipmentInfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>ShipmentInfo</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ConsignmentNo)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ShipperName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ShipperName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ShipperName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ShipperContact, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ShipperContact, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ShipperContact, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ShipperAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ShipperAddress, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ShipperAddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RecipientName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RecipientName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RecipientName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RecipientContact, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RecipientContact, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RecipientContact, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RecipientAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.RecipientAddress, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RecipientAddress, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProcessedBranch, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ProcessedBranch", new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Dhaka", Value = "Dhaka" },
+                new SelectListItem { Text = "Rajshahi", Value = "Rajshahi" },
+                new SelectListItem { Text = "Khulna", Value = "Khulna" },
+                new SelectListItem { Text = "Sylhet", Value = "Sylhet" },
+                new SelectListItem { Text = "Chapai Nawabganj", Value = "Chapai Nawabganj" }
+            }, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PickupBranch, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("PickupBranch", new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Dhaka", Value = "Dhaka" },
+                new SelectListItem { Text = "Rajshahi", Value = "Rajshahi" },
+                new SelectListItem { Text = "Khulna", Value = "Khulna" },
+                new SelectListItem { Text = "Sylhet", Value = "Sylhet" },
+                new SelectListItem { Text = "Chapai Nawabganj", Value = "Chapai Nawabganj" }
+            }, new { @class = "form-control" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Status", new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Accepted by courier", Value = "Accepted by courier" },
+                new SelectListItem { Text = "Delivered", Value = "Delivered" },
+                new SelectListItem { Text = "Collected", Value = "Collected" },
+                new SelectListItem { Text = "Shipped", Value = "Shipped" },
+                new SelectListItem { Text = "Out for delivery", Value = "Out for delivery" }
+            }, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

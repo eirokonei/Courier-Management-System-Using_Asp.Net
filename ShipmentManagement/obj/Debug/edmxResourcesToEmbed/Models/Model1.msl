@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CourierModelStoreContainer" CdmEntityContainer="CourierEntities">
+    <EntitySetMapping Name="ShipmentInfoes">
+      <EntityTypeMapping TypeName="CourierModel.ShipmentInfo">
+        <MappingFragment StoreEntitySet="ShipmentInfo">
+          <ScalarProperty Name="ConsignmentNo" ColumnName="ConsignmentNo" />
+          <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+          <ScalarProperty Name="ShipperContact" ColumnName="ShipperContact" />
+          <ScalarProperty Name="ShipperAddress" ColumnName="ShipperAddress" />
+          <ScalarProperty Name="RecipientName" ColumnName="RecipientName" />
+          <ScalarProperty Name="RecipientContact" ColumnName="RecipientContact" />
+          <ScalarProperty Name="RecipientAddress" ColumnName="RecipientAddress" />
+          <ScalarProperty Name="ProcessedBranch" ColumnName="ProcessedBranch" />
+          <ScalarProperty Name="PickupBranch" ColumnName="PickupBranch" />
+          <ScalarProperty Name="DOPlacingOrder" ColumnName="DOPlacingOrder" />
+          <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CourierModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

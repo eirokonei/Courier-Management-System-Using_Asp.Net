@@ -1,0 +1,95 @@
+﻿@model IEnumerable<ShipmentManagement.Models.ShipmentInfo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdminData</title>
+</head>
+<body>
+    
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipperName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipperContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipperAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipientContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipientAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcessedBranch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PickupBranch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOPlacingOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpectedDeliveryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipperName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipperContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipperAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipientAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessedBranch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickupBranch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOPlacingOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpectedDeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
